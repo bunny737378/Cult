@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Cult",
+  "description": "Next-generation modular streaming client featuring custom native media engine, QuickJS provider scrapers, and frosted glassmorphic UI.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -13,7 +13,7 @@ android {
   compileSdk { version = release(36) { minorApiLevel = 1 } }
 
   defaultConfig {
-    applicationId = "com.example"
+    applicationId = "com.v02.senapi"
     minSdk = 24
     targetSdk = 36
     versionCode = 1
@@ -102,10 +102,15 @@ dependencies {
   implementation(libs.androidx.lifecycle.runtime.compose)
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.lifecycle.viewmodel.compose)
-  // implementation(libs.androidx.navigation.compose)
+  implementation(libs.androidx.navigation.compose)
   implementation(libs.androidx.room.ktx)
   implementation(libs.androidx.room.runtime)
-  // implementation(libs.coil.compose)
+  implementation(libs.coil.compose)
+  implementation(libs.quickjs.android)
+  implementation(libs.gson)
+  implementation(libs.androidx.palette.ktx)
+  implementation(libs.haze)
+  implementation(libs.haze.materials)
   implementation(libs.converter.moshi)
   implementation(libs.firebase.ai)
   // Uncomment to use Firestore:
