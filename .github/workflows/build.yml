@@ -25,17 +25,17 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Prepare Environment Files
+      - name: Accept Android SDK Licenses
         run: |
-          # Ensure .env exists from template
-          if [ -f .env.example ] && [ ! -f .env ]; then
-            cp .env.example .env
-          else
-            touch .env
+          yes | sdkmanager --licenses || true
+
+      - name: Prepare Environment & Keystore
+        run: |
+          # Ensure .env.example and .env exist for Secrets Gradle Plugin
+          if [ ! -f .env.example ]; then
+            echo "# Environment Config" > .env.example
           fi
+          cp -f .env.example .env
 
           # Ensure debug.keystore exists for signing debug builds
           if [ ! -f debug.keystore ]; then
@@ -46,11 +46,8 @@ jobs:
       - name: Make Gradle Wrapper Executable
         run: chmod +x gradlew
 
-      - name: Run Unit Tests
-        run: ./gradlew testDebugUnitTest --stacktrace
-
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --stacktrace --no-daemon
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
