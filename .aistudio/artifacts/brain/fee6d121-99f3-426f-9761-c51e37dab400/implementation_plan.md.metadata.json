@@ -1,0 +1,6 @@
+{
+  "summary":  "Comprehensive architectural implementation plan for 'Cult' — next-generation modular Android streaming app featuring a custom pure-Java and FFmpeg/MediaCodec JNI media engine (zero ExoPlayer/Media3), QuickJS runtime extension bridge for dynamic providers with local caching and background updates, frosted glassmorphism UI with Haze blur, Material 3 Expressive morphing loaders, and full movie/series browsing and playback flows.",
+  "updatedAt":  "2026-10-22T05:04:00.660403016Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}
